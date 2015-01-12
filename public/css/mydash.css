@@ -1,0 +1,105 @@
+body {
+	background-image: url('/blueprint-dark.png');
+	padding-top: 70px;
+}
+.sidebar {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	display: block;
+	padding: 71px 20px 0 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: #F5F5F5;
+	border-right: 1px solid #EEE;
+}
+.nav {
+	padding-left: 0;
+	list-style: outside none none;
+}
+.nav-sidebar {
+	margin: 0 -21px 20px -20px;
+}
+.table-clickable tr {
+	cursor: pointer;
+}
+.main {
+	padding: 0 40px;
+}
+.main > h1, .main > h2, .main > h3, .main > h4, .main > h5, .main > h6 {
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.sidebar > .nav-sidebar > .active {
+	background-color: rgba(33, 150, 243, .5);
+}
+
+.sidebar > .nav-sidebar > .active > a {
+	color: rgba(255, 255, 255, .9);
+}
+
+.sidebar > .nav-sidebar > .active > a:hover {
+	background-color: #eee;
+	color: #0A6EBD;
+}
+
+.widget-area {
+	list-style: none;
+}
+
+#editor {
+	/*margin-top: -6px;
+	position: absolute;
+	bottom: 0;
+	top: 70px;*/
+	position: relative;
+	margin: -6px -40px;
+	min-height: 100vh;
+}
+
+/*
+.widget {
+	width: 250px;
+	margin: 5px;
+	padding: 10px 0;
+	float: left;
+}
+
+.widget-2x {
+	width: 510px;
+}
+
+.widget-3x {
+	width: 770px;
+}
+
+.widget-4x {
+	width: 1030px;
+}
+
+.widget {
+	width: 24%;
+	margin: 5px;
+	padding: 10px 0;
+	float: left;
+}
+
+.widget-2x {
+	width: 48%;
+}
+
+.widget-3x {
+	width: 72%;
+}
+
+.widget-4x {
+	width: 96%;
+}*/
+
+.test-box {
+	border: 3px dashed #eee;
+	text-align: center;
+	min-height: 25px;
+	margin-top: 15px;
+}

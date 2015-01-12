@@ -1,0 +1,26 @@
+[
+	{
+		"content": {
+			"provider": "server-time"
+		},
+		"display": {
+			"provider": "code-box"
+		},
+		"trigger": {
+			"provider": "repeat", // Could have different providers here such as repeat to manually check every so often, push to wait for data from e.g. a server, etc.
+			"args": "3000" // Every three seconds
+		},
+		"extra-css": "",
+		"size": 4
+	},
+	{
+		"content": {
+			"provider": "text",
+			"args": "Hello, World!"
+		},
+		"display": {
+			"provider": "code-box"
+		}
+		"size": 8
+	}
+]

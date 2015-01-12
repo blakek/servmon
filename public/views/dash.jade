@@ -1,0 +1,43 @@
+//- include ./application.jade
+extends ./base-with-sidebar.jade
+
+block sidebar
+	include ./sidebar-dash.jade
+
+block content
+	h1 Dashboard
+		small.pull-right
+			small #{hostname}
+
+	ul.widget-area.sortable
+		li.ui-state-default.test-box.col-md-3
+			pre Server time:
+				span#servtime
+		li.ui-state-default.test-box.col-md-3
+			span Test 2
+		li.ui-state-default.test-box.col-md-3
+			span Test 3
+		li.ui-state-default.test-box.col-md-3
+			span hey
+
+	script.
+		var socket = io();
+
+			$(document).ready(function() {
+				$('.table-clickable tr').click(function() {
+					window.document.location = $(this).data('url');
+				});
+			});
+
+			function tick() {
+				socket.emit('tick');
+				setTimeout(tick, 3000);
+			}
+			tick();
+
+			socket.on('tock', function(time) {
+				$('#servtime').text(time);
+			});
+
+			$('.sortable').sortable();
+			$('.sortable').disableSelection();

@@ -1,0 +1,14 @@
+{
+	"name": "Outdated brew packages",
+	"version": "0.0.1",
+	"description": "Show brew outdated backages (using `brew outdated`).",
+	"main": "run.js",
+	"output-type": "application/json",
+	"dependencies": {},
+	"devDependencies": {},
+	"keywords": [
+		"brew"
+	],
+	"author": "Blake Knight <oss.ideas@gmail.com>",
+	"license": "private"
+}

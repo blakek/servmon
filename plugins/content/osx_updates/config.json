@@ -1,0 +1,16 @@
+{
+  "name": "Available Updates (OS X)",
+  "version": "0.0.1",
+  "description": "Show OS X available updates (using the `softwareupdate' tool).",
+  "main": "run.js",
+  "output-type": "application/json",
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [
+    "server",
+    "monitor",
+    "servmon"
+  ],
+  "author": "Blake Knight <oss.ideas@gmail.com>",
+  "license": "private"
+}

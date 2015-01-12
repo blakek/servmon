@@ -1,0 +1,3 @@
+CONTENT: data generators
+TRIGGER: triggers (e.g. certain time, certain location, if data generator creates something containing certain pattern, etc.)
+DISPLAY: data displays

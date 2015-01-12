@@ -1,0 +1,29 @@
+extends ../base-with-sidebar.jade
+
+block sidebar
+	ul.nav.nav-sidebar
+		li
+			a(href="#") Open...
+		li
+			a(href="javascript:save()") Save
+		li
+			a(href="#") Close
+
+block content
+	#editor #{contents}
+
+	script(type='text/javascript', src='/js/ace-min-noconflict/ace.js' charset="utf-8")
+	script.
+		var editor = ace.edit('editor');
+		editor.setTheme('ace/theme/monokai');
+		editor.getSession().setMode('ace/mode/javascript');
+
+		function save() {
+			$.ajax({
+				type: 'POST',
+				url: '/editor#{location}',
+				data: {
+					contents: $('#editor').text()
+				}
+			});
+		}
