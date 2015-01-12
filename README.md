@@ -3,7 +3,8 @@ Flexible server monitoring and administration. Hugely in progress
 
 ## Requirements
 All you have to have to run this software is:
-	- node.js (with npm) installed and working
+  
+  - node.js (with npm) installed and working
 
 ## Getting started
 First, you'll want to download the node dependencies.  The easiest way is to change to the directory you downloaded this to, and type:
