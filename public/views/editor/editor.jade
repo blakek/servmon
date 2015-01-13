@@ -2,7 +2,7 @@ extends ../base-with-sidebar.jade
 
 block sidebar
 	ul.nav.nav-sidebar
-		li
+		li.disabled
 			a(href="#") Open...
 		li
 			a(href="javascript:save()") Save
@@ -10,9 +10,9 @@ block sidebar
 			a(href="/editor") Close
 
 	ul.nav.nav-sidebar
-		li
+		li.disabled
 			a(href="#") Set color scheme
-		li
+		li.disabled
 			a(href="#") Set syntax
 
 block content
