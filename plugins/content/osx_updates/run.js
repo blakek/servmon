@@ -1,17 +1,33 @@
+'use strict';
+
+/*
+Example thing to run to simulate updates...
+
+#!/bin/sh
+
+echo 'Software Update Tool
+Copyright 2002-2012 Apple Inc.
+
+Finding available software
+Software Update found the following new or updated software:
+    * MacBookAirEFIUpdate2.4-2.4
+	MacBook Air EFI Firmware Update (2.4), 3817K [recommended] [restart]
+    * ProAppsQTCodecs-1.0
+	ProApps QuickTime codecs (1.0), 968K [recommended]
+    * JavaForOSX-1.0
+	Java for OS X 2012-005 (1.0), 65288K [recommended]
+'
+*/
+
 var exec = require('child_process').exec;
 
-exec('sutest.sh --list', function(error, stdout, stderr) {
-	// var r = / {4}\* (.*)/g;
-	var r = /    \* ([\s\S]*?)(?=    \* |$)/g
-	//console.log(stdout.split('*'));
+module.exports = function (ret) {
+	exec('softwareupdate --list', function(error, stdout, stderr) {
+		var packages = [];
+		stdout.replace(/ {4}\* (.*)/g, function($1, $2) {
+			packages.push($2);
+		});
 
-	// stdout.replace(/ {4}\* (.*)/g, function($1, $2) {
-	// 	console.log($2);
-	// });
-
-	stdout.replace(r, function(string, match) {
-		console.log(match);
+		ret(packages);
 	});
-
-	//console.log(stdout.split(r).slice(1));
-});
+}

@@ -2,12 +2,18 @@ extends ../base-with-sidebar.jade
 
 block sidebar
 	ul.nav.nav-sidebar
-		li
+		li.disabled
 			a(href="#") Open...
 		li
 			a(href="javascript:save()") Save
 		li
-			a(href="#") Close
+			a(href="/editor") Close
+
+	ul.nav.nav-sidebar
+		li.disabled
+			a(href="#") Set color scheme
+		li.disabled
+			a(href="#") Set syntax
 
 block content
 	#editor #{contents}
@@ -21,9 +27,10 @@ block content
 		function save() {
 			$.ajax({
 				type: 'POST',
-				url: '/editor#{location}',
+				url: '/editor/#{location}',
+				contentType: 'application/x-www-form-urlencoded',
 				data: {
-					contents: $('#editor').text()
+					contents: editor.getValue()
 				}
 			});
 		}
