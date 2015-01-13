@@ -7,7 +7,13 @@ block sidebar
 		li
 			a(href="javascript:save()") Save
 		li
-			a(href="#") Close
+			a(href="/editor") Close
+
+	ul.nav.nav-sidebar
+		li
+			a(href="#") Set color scheme
+		li
+			a(href="#") Set syntax
 
 block content
 	#editor #{contents}
@@ -21,9 +27,10 @@ block content
 		function save() {
 			$.ajax({
 				type: 'POST',
-				url: '/editor#{location}',
+				url: '/editor/#{location}',
+				contentType: 'application/x-www-form-urlencoded',
 				data: {
-					contents: $('#editor').text()
+					contents: editor.getValue()
 				}
 			});
 		}
